@@ -1,1 +1,1 @@
-# AyeMoet_PCOS_Dashboard
+This Dashboard is a final project of Data Communication & Ethic Class in Parami University. The process includes Exploratory Data Analysis, html and css file for D3.js interactive Dashboard. This Dashboard reflect my personal story of having PCOS now called PMOS from 2021 to 2026.# AyeMoet_PCOS_Dashboard
