@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aye Moet's PCOS Resilience Journey</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <p style="font-family:'Playfair Display', serif; font-style:italic; color:var(--purple-deep)">Opening Resilience Portfolio...</p>
+  </div>
+
+  <div class="wrapper">
+    <header class="hero">
+      <div class="hero-tag">Personal PCOS Journey &bull; 2021 – 2026</div>
+      <h1>Living with PCOS:<br/><em>A Journey of Resilience</em></h1>
+      <p class="hero-byline">By <strong>Aye Moet Moet Zaw</strong> &nbsp;&bull;&nbsp; Parami University</p>
+    </header>
+
+    <div class="file-tabs">
+      <button class="tab-btn active" onclick="switchSession('journey', this)">1: My story</button>
+      <button class="tab-btn" onclick="switchSession('data', this)">2: The Journey</button>
+      <button class="tab-btn" onclick="switchSession('insights', this)">3: Experience Over Time</button>
+      <button class="tab-btn" onclick="switchSession('decisions', this)">4: Future Plan</button>
+      <button class="tab-btn" onclick="switchSession('ethics', this)">5: Ethics & Data</button>
+    </div>
+
+    <main class="file-content-container">
+
+      <section id="journey" class="session-content active">
+        <img class="pcos-image-header" src="https://i.pinimg.com/736x/c4/d5/e4/c4d5e49b129ae31e0125a8386ceaf695.jpg" alt="Feminine Wellness, Healing and Care Insights">
+        <h2 class="section-title">My <em>Story</em></h2>
+        <p class="section-desc">A Resilient & Patient Journey of fighting PCOS (Polycystic Ovary Syndrome).</p>
+
+        <blockquote class="meaningful-statement">
+          <strong>Why This Journey is Meaningful?:</strong><br/>
+          Living with PCOS is not an easy journey to overcome. I experienced extreme weight gains, body inflammation, whole month menstruation cycle, hair loss, slow body metabolism and side effects of PCOS. I managed to overcome through Fitness and limiting on my nutrition intake. I cried and had many challenges to be consistent in my workout, to be able to manage the nutrition under academic stress. This is not just my PCOS journey, but a journey of finding true physical and spiritual self. 
+        </blockquote>
+
+        <div class="custom-timeline">
+          <div class="timeline-node">
+            <div class="node-year">2021</div>
+            <div class="node-title">Start of Unhealthy Time</div>
+            <p class="node-text">After Covid-19 and Unstable Political situations in Myanmar, my lifestyle and health became messy. I started gaining weight and having difficulties in my daily life, like finding it difficult to breathe while sleeping.</p>
+          </div>
+          <div class="timeline-node">
+            <div class="node-year">2022</div>
+            <div class="node-title">Irregular Menstrual Cycle</div>
+            <p class="node-text">The time I was familiar with CrossFit and Functional workouts. The irregular menstrual cycle started happening at this time.</p>
+          </div>
+          <div class="timeline-node">
+            <div class="node-year">2023</div>
+            <div class="node-title">Active Management</div>
+            <p class="node-text">Irregularities within my cycle persisted off and on. However, I remained tightly integrated with dedicated workout and fitness systems. So, I effectively managed and counter-balanced the visible side effects.</p>
+          </div>
+          <div class="timeline-node">
+            <div class="node-year">2024</div>
+            <div class="node-title">Lifestyle Breakdown</div>
+            <p class="node-text">A massive life disruption. I stopped exercising completely following a move to Yangon. Swallowed by a chaotic lifestyle, significant stress, and rapid weight fluctuations, my health indicators hit an absolute crisis point.</p>
+          </div>
+          <div class="timeline-node">
+            <div class="node-year">2025</div>
+            <div class="node-title">Suffering PCOS</div>
+            <p class="node-text">The year of intense physical and mental struggles. Facing highly extreme and prolonged menstrual occurrences, body inflammation, and mental breakdowns.</p>
+          </div>
+          <div class="timeline-node">
+            <div class="node-year">2026</div>
+            <div class="node-title">Fight with My Immune System</div>
+            <p class="node-text">Received PCOS diagnosis with a Nutritionist Doctor. Maintaining nutrition intake. Consistent in CrossFit workouts. Persistent stubbornness of weight, but showing good body composition.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="data" class="session-content">
+        <h2 class="section-title">The <em>PCOS Tracking Data</em></h2>
+        <p class="section-desc">61 months of tracking across multiple physiological parameters. Use the control systems below to filter by specific years or isolate individual data types.</p>
+
+        <div class="filter-box">
+          <div class="filter-control-group">
+            <label for="yearFilterDropdown" class="filter-label">📅 Select Year to Analyze</label>
+            <select id="yearFilterDropdown" onchange="filterByYear(this.value)">
+              <option value="all">All Years Combined (2021-2026)</option>
+              <option value="2021">2021 (Unhealthy Baseline)</option>
+              <option value="2022">2022 (Functional Training Intro)</option>
+              <option value="2023">2023 (Active Counter-Management)</option>
+              <option value="2024">2024 (Yangon Lifestyle Crisis)</option>
+              <option value="2025">2025 (Inflammation & Struggle)</option>
+              <option value="2026">2026 (Clinical Recovery Phase)</option>
+            </select>
+          </div>
+          
+          <div class="filter-control-group">
+            <label for="metricFilterDropdown" class="filter-label">📊 Select Metric Perspective</label>
+            <select id="metricFilterDropdown" onchange="filterByMetric(this.value)">
+              <option value="all">Holistic View (All Charts)</option>
+              <option value="hormonal">Hormonal Elements (Cycle & Severity)</option>
+              <option value="lifestyle">Lifestyle Elements (Sleep, Mood & Weight)</option>
+            </select>
+          </div>
+
+          <div class="filter-hint">
+            💡 <strong>Interactive Hint:</strong> Adjusting the year alters chart timelines, while the metric filter isolates specific data areas to simplify comparison.
+          </div>
+        </div>
+
+        <div class="kpi-row" id="kpiGridContainer"></div>
+
+        <div class="chart-layout-grid" id="chartGroupRow1">
+          <div class="chart-box" id="containerCycleChart">
+            <div class="chart-box-title" id="cycleChartTitle">Menstrual Cycle Status Distribution</div>
+            <div class="chart-sub">Visualizing return frequency of standard, irregular, or skipped cycle balances.</div>
+            <div class="canvas-container"><canvas id="cleanCycleChart"></canvas></div>
+          </div>
+          <div class="chart-box" id="containerScatterChart">
+            <div class="chart-box-title">Sleep Hours vs. Mood Score Correlation</div>
+            <div class="chart-sub">Mapping the direct alignment of adequate sleep to psychological resilience.</div>
+            <div class="canvas-container"><canvas id="cleanScatterChart"></canvas></div>
+          </div>
+        </div>
+
+        <div class="chart-layout-grid" id="chartGroupRow2">
+          <div class="chart-box" id="containerFitnessChart">
+            <div class="chart-box-title">Fitness Journey & Workout Continuity</div>
+            <div class="chart-sub">Tracking active monthly functional training metrics (Scale: 1-10).</div>
+            <div class="canvas-container"><canvas id="cleanFitnessChart"></canvas></div>
+          </div>
+          <div class="chart-box" id="containerWeightChart">
+            <div class="chart-box-title">Weight Trajectory Over Time (lbs)</div>
+            <div class="chart-sub">Illustrating the stubborn plateau of weight despite optimized wellness protocols.</div>
+            <div class="canvas-container"><canvas id="cleanWeightChart"></canvas></div>
+          </div>
+          <div class="chart-box" id="containerPcosChart">
+            <div class="chart-box-title">PCOS Intensity Trend Line</div>
+            <div class="chart-sub">Watch the gradual stabilization down from the historical 2024–2025 crisis.</div>
+            <div class="canvas-container"><canvas id="cleanPcosChart"></canvas></div>
+          </div>
+        </div>
+
+        <h3 style="font-family:'Playfair Display', serif; margin:20px 0 10px;">Holistic Health Percentage</h3>
+        <div class="creative-matrix">
+          <div class="creative-gauge">
+            <strong style="color:var(--pink-deep); font-size:1.4rem;">70%</strong>
+            <div style="font-size:0.85rem; font-weight:600; margin-top:4px;">Hormonal Control Index</div>
+            <div class="gauge-bar-container"><div class="gauge-fill" style="width: 70%;"></div></div>
+            <span style="font-size:0.75rem; color:var(--text-muted)">Derived from active cycle parameters</span>
+          </div>
+          <div class="creative-gauge">
+            <strong style="color:var(--purple-deep); font-size:1.4rem;">92%</strong>
+            <div style="font-size:0.85rem; font-weight:600; margin-top:4px;">Workout Habit Persistence</div>
+            <div class="gauge-bar-container"><div class="gauge-fill" style="width: 92%;"></div></div>
+            <span style="font-size:0.75rem; color:var(--text-muted)">Current Functional tracking continuity</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="session-content">
+        <img class="pcos-image-header" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000" alt="Yoga, Movement, and Hormonal Equilibrium">
+        <h2 class="section-title">What did I <em>Learn?</em></h2>
+        <p class="section-desc">What the collective metrics reveal when filtered with data accuracy and real honesty.</p>
+
+        <div class="card-list">
+          <div class="fancy-card">
+            <div class="card-header-group">
+              <span class="card-icon">🏋️‍♀️</span>
+              <h3 class="card-header-title">1. Exercise is the Primary Tool to Manage PCOS</h3>
+            </div>
+            <p>Across the 5-year dataset, exercise stands as the single most critical lever for managing symptoms. During the 2022–2023 active functional training phases, regular physical activity kept self-reported PCOS severity scores at a manageable baseline average of <strong>3.0 out of 10</strong>. When exercise dropped to zero in 2024 following the move to Yangon, severity metrics immediately climbed to an all-time peak of <strong>10.0 out of 10</strong>, proving the direct protective value of functional movement.</p>
+          </div>
+
+          <div class="fancy-card purple-variant">
+            <div class="card-header-group">
+              <span class="card-icon">🩸</span>
+              <h3 class="card-header-title">2. Tracking the Menstrual Cycle Tells the True Health Story</h3>
+            </div>
+            <p>A consistent cycle serves as the ultimate indicator of foundational physical recovery. The data shows that during my 2024 lifestyle breakdown, standard tracking sequences completely disappeared, replaced by an uninterrupted 12-month string of irregular or skipped markers. Reclaiming a predictable rhythm during the 2026 recovery phase is the clearest indicator that hormones have stabilized, showing that cycle health is a far more useful metric than any number on a bathroom scale.</p>
+          </div>
+
+          <div class="fancy-card">
+            <div class="card-header-group">
+              <span class="card-icon">⚖️</span>
+              <h3 class="card-header-title">3. Weight and PCOS Control Work Independently</h3>
+            </div>
+            <p>The metrics clearly show that body mass index and internal health function work independently of each other. While body weight has stayed on a stubborn plateau between <strong>178 lbs and 184 lbs</strong> across 2025 and 2026, my internal health markers tell a very different story. During this exact same timeframe, my subjective mood architecture stabilized from a low score of 2.0 up to an active <strong>8.0 out of 10</strong>, while overall PCOS symptom severity trended down from 10.0 to <strong>4.0</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="decisions" class="session-content">
+        <h2 class="section-title">Future <em>Plan</em></h2>
+        <p class="section-desc">Data-backed strategic course corrections aimed at maintaining sustainable health and long-term vitality.</p>
+
+        <div class="card-list">
+          <div class="fancy-card purple-variant">
+            <div class="card-header-group">
+              <span class="card-icon">⚡</span>
+              <h3 class="card-header-title">1. Consistent Workout</h3>
+            </div>
+            <p><strong>Maintain consistency in workouts:</strong> The data confirms that breaking my physical fitness schedule causes immediate health risks. When training dropped to 0% continuity in 2024, my PCOS severity rating spiked by <strong>70%</strong> (from 3.0 up to 10.0). Therefore, I will lock in a non-negotiable schedule of at least 4 functional training sessions per week, treating exercise as essential medical self-care to ensure my severity indexes never cross the baseline threshold of 5.0 again.</p>
+          </div>
+
+          <div class="fancy-card">
+            <div class="card-header-group">
+              <span class="card-icon">🥗</span>
+              <h3 class="card-header-title">2. Focus on Menstrual Cycle And Nutrition Intake</h3>
+            </div>
+            <p><strong>Shift focus away from weight outcomes:</strong> Because the tracking records show a distinct 24-month process where weight fluctuated by less than 4% despite major changes in diet and activity, I will stop using weight as my primary metric for health. Instead, I will evaluate success based on cycle regularity and maintaining nutrition intake, supporting my metabolic health without triggering the cortisol spikes caused by scale-related anxiety.</p>
+          </div>
+
+          <div class="fancy-card purple-variant">
+            <div class="card-header-group">
+              <span class="card-icon">🌙</span>
+              <h3 class="card-header-title">3. Maintain Sleep Routine</h3>
+            </div>
+            <p><strong>Protect sleep windows to stabilize mood:</strong> The sleep-to-mood scatter plot displays a clear threshold effect: when sleep durations fell below <strong>6.0 hours</strong>, reported mood indicators consistently dropped below a score of 4.0. To actively manage my psychological resilience, I will protect a strict 7-5 hours nightly sleep window, using rest as a primary defense against stress-induced hormonal flare-ups.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ethics" class="session-content">
+        <h2 class="section-title">Ethics & <em>Responsibility</em></h2>
+        <p class="section-desc">Critical framework assessing data boundaries, biological tracking limitations, and responsible representation of self-reported metrics.</p>
+        
+        <div class="card-list">
+          <div class="fancy-card">
+            <div class="card-header-group">
+              <span class="card-icon">🔒</span>
+              <h3 class="card-header-title">Privacy Statement</h3>
+            </div>
+            <p><strong>What data is included?</strong> This asset captures monthly measurements spanning January 2021 through December 2026, comprising physical body weight values (lbs), calculated sleep durations, self-reported mood states, physical fitness tiers, cycle regularity labels, and synthesized PCOS symptom intensity indices.</p>
+            <p style="margin-top: 10px;"><strong>What is anonymized?</strong> To minimize digital privacy risks while maintaining structural openness, direct identifiers like personal healthcare registry numbers, clinical medical facility names, and specific medication dosages have been entirely excluded from the repository. Data processing strips all local timestamp values, exposing only generic month/year buckets to ensure absolute privacy while maintaining analysis value.</p>
+          </div>
+
+          <div class="fancy-card purple-variant">
+            <div class="card-header-group">
+              <span class="card-icon">⚠️</span>
+              <h3 class="card-header-title">Bias & Limitation Disclosure</h3>
+            </div>
+            <p><strong>Memory Bias:</strong> Historical metrics collected throughout 2021 and 2022 rely on retrospective tracking logs and memory recall, introducing possible variation where specific baseline sleep habits or mild cycle shifts could be under-reported or smoothed over.</p>
+            <p style="margin-top: 8px;"><strong>Small Dataset Constraint:</strong> The primary scope contains exactly 61 rows representing an individual tracking ledger. It cannot be used to generalize algorithmic trends or construct generalized endocrine models for broader clinical groups.</p>
+            <p style="margin-top: 8px;"><strong>Subjective Scoring Frameworks:</strong> Elements such as the 1–10 Mood Score and PCOS Severity Scale are self-assessed by personal observation. These parameters reflect qualitative perceptions and are subject to personal bias, rather than objective, lab-tested biochemical metrics.</p>
+          </div>
+
+          <div class="fancy-card">
+            <div class="card-header-group">
+              <span class="card-icon">📊</span>
+              <h3 class="card-header-title">Visualization Justification</h3>
+            </div>
+            <p><strong>Chart Choices:</strong> Stacked bar components were selected for the Menstrual Status distribution to convey tracking completeness and display cyclical ratios clearly. The Sleep vs. Mood correlation chart leverages an unlinked scatter layout to highlight raw clusters without inventing linear trends where the data is spread out.</p>
+            <p style="margin-top: 10px;"><strong>Misinterpretation Risk Mitigation:</strong> Line elements representing long-term weight indicators present a distinct risk of causing anxiety over minor weight plateaus. To prevent false conclusions, a direct PCOS Intensity Trend is plotted directly alongside it. This structure visually emphasizes that clinical progress exists even when body weight metrics remain temporarily fixed.</p>
+          </div>
+
+          <div class="fancy-card purple-variant">
+            <div class="card-header-group">
+              <span class="card-icon">🎯</span>
+              <h3 class="card-header-title">Responsible Decision-Making &amp; Limitations</h3>
+            </div>
+            <p><strong>Framework Limitations:</strong> The choices detailed in the execution map (uncompromising CrossFit routines, calorie tracking, and sleep defenses) are optimization steps built on this individual history. They operate purely as wellness updates and do not replace professional medical advice, target clinical medication paths, or substitute for direct laboratory blood testing.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer style="text-align:center; padding:30px; font-size:0.8rem; color:var(--text-muted)">
+      Personal PCOS Resilience Dashboard &bull; Authentic Tracking Ledger (2021 - 2026)
+    </footer>
+  </div>
+
+  <script>
+    // Tab Controller Engine
+    function switchSession(sessionId, element) {
+      document.querySelectorAll('.session-content').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      
+      document.getElementById(sessionId).classList.add('active');
+      element.classList.add('active');
+    }
+
+    // Interactive Global Dashboard Memory Slots
+    let masterDataset = [];
+    let activeYearFilter = "all";
+    let activeMetricFilter = "all"; // Secondary Filter Metric
+    let chartInstances = {};
+
+    const csvUrl = "pcos_cleaned.csv";
+
+    // Initial CSV File Loading Engine
+    Papa.parse(csvUrl, {
+      header: true,
+      dynamicTyping: true,
+      download: true,
+      complete: function(results) {
+        masterDataset = results.data.filter(r => r.Year && r.Month);
+        updateDashboardView();
+      },
+      error: function(err) {
+        console.error("Data mapping fault:", err);
+        document.getElementById("loading").innerHTML = "<p style='color:red; padding: 20px;'>Initialization Error: Confirm pcos_cleaned.csv presence in the same repository folder.</p>";
+      }
+    });
+
+    // Dropdown change trigger functions
+    function filterByYear(yearValue) {
+      activeYearFilter = yearValue;
+      updateDashboardView();
+    }
+
+    function filterByMetric(metricValue) {
+      activeMetricFilter = metricValue;
+      updateDashboardLayers();
+    }
+
+    // Handles Visibility Layers Based on Metric Filters
+    function updateDashboardLayers() {
+      const row1 = document.getElementById("chartGroupRow1");
+      const row2 = document.getElementById("chartGroupRow2");
+      const cCycle = document.getElementById("containerCycleChart");
+      const cScatter = document.getElementById("containerScatterChart");
+      const cFitness = document.getElementById("containerFitnessChart");
+      const cWeight = document.getElementById("containerWeightChart");
+      const cPcos = document.getElementById("containerPcosChart");
+
+      // Reset Defaults
+      row1.style.display = "grid";
+      row2.style.display = "grid";
+      cCycle.style.display = "block";
+      cScatter.style.display = "block";
+      cFitness.style.display = "block";
+      cWeight.style.display = "block";
+      cPcos.style.display = "block";
+
+      if (activeMetricFilter === "hormonal") {
+        row2.style.display = "none"; 
+        cScatter.style.display = "none"; 
+        row1.style.gridTemplateColumns = "1fr"; 
+      } else if (activeMetricFilter === "lifestyle") {
+        cCycle.style.display = "none"; 
+        cPcos.style.display = "none"; 
+        row1.style.gridTemplateColumns = "1fr";
+        row2.style.gridTemplateColumns = "1fr";
+      } else {
+        row1.style.gridTemplateColumns = "1fr 1fr";
+        row2.style.gridTemplateColumns = "1fr 1fr 1fr"; // Adjusted dynamically for 3 layout items
+      }
+    }
+
+    // Dynamic Slicing & Re-rendering Engine
+    function updateDashboardView() {
+      let filteredRows = [...masterDataset];
+      const isSingleYearView = activeYearFilter !== "all";
+
+      if (isSingleYearView) {
+        const targetYear = parseInt(activeYearFilter);
+        filteredRows = filteredRows.filter(r => r.Year === targetYear);
+      }
+
+      const timeLabels = filteredRows.map(r => `${r.Month.toString().substring(0,3)} ${r.Year}`);
+      const weights = filteredRows.map(r => r.Weight_lb);
+      const pcosScores = filteredRows.map(r => r.PCOS_Score);
+
+      if (filteredRows.length > 0) {
+        const finalPcos = pcosScores[pcosScores.length - 1];
+        const weightPeak = Math.max(...masterDataset.map(r => r.Weight_lb)); 
+        const currentWeight = weights[weights.length - 1];
+        const activeFitnessString = filteredRows[filteredRows.length - 1].Fitness_Level || "Advanced";
+
+        document.getElementById("kpiGridContainer").innerHTML = `
+          <div class="kpi-mini-card"><div class="kpi-val">${finalPcos}/10</div><div class="kpi-lbl">PCOS Severity Index</div></div>
+          <div class="kpi-mini-card"><div class="kpi-val">${currentWeight} lbs</div><div class="kpi-lbl">Weight (Historical Peak: ${weightPeak})</div></div>
+          <div class="kpi-mini-card"><div class="kpi-val">${activeFitnessString}</div><div class="kpi-lbl">Assigned Fitness Profile</div></div>
+        `;
+      } else {
+        document.getElementById("kpiGridContainer").innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:15px; color:var(--text-muted)">No metrics recorded for this selected year.</div>`;
+      }
+
+      Chart.defaults.font.family = "'DM Sans', sans-serif";
+      Chart.defaults.color = "#8c738f";
+
+      // --- CHART 1: Menstrual Stacked Grid ---
+      let chartLabels = [];
+      if (isSingleYearView) {
+        chartLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        document.getElementById("cycleChartTitle").innerText = `Menstrual Cycle Tracking Breakdown (${activeYearFilter})`;
+      } else {
+        chartLabels = [2021, 2022, 2023, 2024, 2025, 2026];
+        document.getElementById("cycleChartTitle").innerText = "Menstrual Cycle Status by Year (Historical Summary)";
+      }
+
+      const structuralTypes = ["Regular", "Irregular", "Skipped", "Continuous (whole month)", "Heavy/Prolonged"];
+      const premiumColors = ["#d81b60", "#ba68c8", "#f48fb1", "#7b1fa2", "#e91e8c"];
+
+      if (chartInstances.cycle) chartInstances.cycle.destroy();
+      chartInstances.cycle = new Chart(document.getElementById("cleanCycleChart").getContext("2d"), {
+        type: "bar",
+        data: {
+          labels: chartLabels,
+          datasets: structuralTypes.map((category, idx) => ({
+            label: category,
+            data: chartLabels.map(label => {
+              if (isSingleYearView) {
+                return filteredRows.filter(r => {
+                  const abbreviation = r.Month ? r.Month.toString().substring(0,3) : "";
+                  return abbreviation.toLowerCase() === label.toLowerCase() && r.Menstrual_Cycle === category;
+                }).length;
+              } else {
+                return masterDataset.filter(r => r.Year === label && r.Menstrual_Cycle === category).length;
+              }
+            }),
+            backgroundColor: premiumColors[idx % premiumColors.length],
+            borderRadius: 4
+          }))
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { 
+            x: { stacked: true }, 
+            y: { stacked: true, ticks: { stepSize: 1 } } 
+          },
+          plugins: { legend: { labels: { boxWidth: 10, font: { size: 9 } }, position: 'bottom' } }
+        }
+      });
+
+      // --- CHART 2: Scatter Sleep vs Mood Mapping ---
+      if (chartInstances.scatter) chartInstances.scatter.destroy();
+      chartInstances.scatter = new Chart(document.getElementById("cleanScatterChart").getContext("2d"), {
+        type: "scatter",
+        data: {
+          datasets: [{
+            label: "Monitored Months",
+            data: filteredRows.map(r => ({ x: r.Sleep_Hours, y: r.Mood_Score })),
+            backgroundColor: "rgba(123, 31, 162, 0.65)",
+            pointRadius: 6,
+            pointHoverRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { title: { display: true, text: "Sleep Duration (Hours)" }, min: 4, max: 9 },
+            y: { title: { display: true, text: "Assigned Mood Score" }, min: 1, max: 10 }
+          },
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // --- NEW INTEGRATION: CHART 3: Fitness Journey Line Graph ---
+      if (chartInstances.fitness) chartInstances.fitness.destroy();
+      const fitnessScores = filteredRows.map(r => {
+        if (r.Fitness_Level === "Advanced") return 9;
+        if (r.Fitness_Level === "Intermediate") return 6;
+        if (r.Fitness_Level === "Beginner") return 3;
+        return r.Fitness_Level || 0; 
+      });
+
+      chartInstances.fitness = new Chart(document.getElementById("cleanFitnessChart").getContext("2d"), {
+        type: "line",
+        data: {
+          labels: timeLabels,
+          datasets: [{
+            label: "Fitness Consistency Scale",
+            data: fitnessScores,
+            borderColor: "#ba68c8",
+            backgroundColor: "rgba(186, 104, 200, 0.1)",
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.3,
+            pointRadius: isSingleYearView ? 4 : 1
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } }, 
+          scales: { x: { ticks: { maxTicksLimit: 12 } }, y: { min: 0, max: 10 } } 
+        }
+      });
+
+      // --- CHART 4: Line Trajectory Trace for Weight ---
+      if (chartInstances.weight) chartInstances.weight.destroy();
+      chartInstances.weight = new Chart(document.getElementById("cleanWeightChart").getContext("2d"), {
+        type: "line",
+        data: {
+          labels: timeLabels,
+          datasets: [{
+            data: weights,
+            borderColor: "#d81b60",
+            borderWidth: 2.5,
+            fill: false,
+            tension: 0.3,
+            pointRadius: isSingleYearView ? 4 : 1
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } }, 
+          scales: { x: { ticks: { maxTicksLimit: 12 } } } 
+        }
+      });
+
+      // --- CHART 5: PCOS Severity Index Path ---
+      if (chartInstances.pcos) chartInstances.pcos.destroy();
+      chartInstances.pcos = new Chart(document.getElementById("cleanPcosChart").getContext("2d"), {
+        type: "line",
+        data: {
+          labels: timeLabels,
+          datasets: [{
+            data: pcosScores,
+            borderColor: "#7b1fa2",
+            borderWidth: 2.5,
+            fill: false,
+            tension: 0.3,
+            pointRadius: isSingleYearView ? 4 : 1
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } }, 
+          scales: { x: { ticks: { maxTicksLimit: 12 } }, y: { min: 0, max: 10 } } 
+        }
+      });
+
+      updateDashboardLayers(); 
+      document.getElementById("loading").style.display = "none";
+    }
+  </script>
+</body>
+</html>

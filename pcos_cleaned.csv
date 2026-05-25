@@ -1,0 +1,62 @@
+Year,Month,Height_cm,Weight_lb,BMI,Workout_Days,Workout_Type,Calories_Intake,Sleep_Hours,Mood_Score,Fitness_Level,Menstrual_Cycle,PCOS_Score
+2021,May,165.0,170.0,28.3,5.0,Crossfit,1412.0,7.6,6.0,Beginner,Irregular,1.0
+2021,June,165.0,175.0,29.2,5.0,Crossfit,1679.0,6.9,8.0,Beginner,Regular,1.0
+2021,July,165.0,180.0,30.0,3.0,Crossfit,1519.0,7.3,5.0,Beginner,Irregular,3.0
+2021,August,165.0,178.0,29.7,5.0,Crossfit + Functional,1679.0,7.1,8.0,Beginner,Irregular,1.0
+2021,September,165.0,176.5,29.4,3.0,Crossfit + Functional,1616.0,7.0,6.0,Beginner,Irregular,2.0
+2021,October,165.0,175.0,29.2,3.0,Crossfit,1594.0,6.6,7.0,Beginner,Irregular,1.0
+2021,November,165.0,173.5,28.9,5.0,Functional,1674.0,6.7,8.0,Beginner,Regular,3.0
+2021,December,165.0,172.0,28.7,4.0,Crossfit + Functional,1585.0,7.4,5.0,Beginner,Regular,3.0
+2022,January,165.0,171.0,28.5,3.0,Functional,1340.0,7.8,6.0,Intermediate,Irregular,2.0
+2022,February,165.0,170.0,28.3,5.0,Functional,1383.0,7.1,6.0,Intermediate,Regular,3.0
+2022,March,165.0,169.0,28.2,5.0,Crossfit,1573.0,7.6,6.0,Intermediate,Skipped,2.0
+2022,April,165.0,168.5,28.1,5.0,Crossfit + Functional,1585.0,6.8,7.0,Beginner,Irregular,1.0
+2022,May,165.0,168.0,28.0,4.0,Functional,1437.0,6.6,7.0,Beginner,Skipped,2.0
+2022,June,165.0,167.5,27.9,5.0,Functional,1373.0,6.9,6.0,Intermediate,Skipped,3.0
+2022,July,165.0,167.0,27.8,4.0,Functional,1674.0,8.0,6.0,Intermediate,Regular,1.0
+2022,August,165.0,166.5,27.7,3.0,Crossfit,1381.0,7.7,8.0,Beginner,Skipped,2.0
+2022,September,165.0,166.0,27.7,5.0,Functional,1570.0,6.9,5.0,Beginner,Irregular,3.0
+2022,October,165.0,165.5,27.6,4.0,Crossfit,1450.0,7.2,8.0,Beginner,Irregular,3.0
+2022,November,165.0,165.2,27.5,3.0,Crossfit + Functional,1354.0,7.8,7.0,Beginner,Irregular,2.0
+2022,December,165.0,165.0,27.5,3.0,Crossfit + Functional,1571.0,7.9,7.0,Intermediate,Regular,1.0
+2023,January,165.0,165.2,27.5,3.0,Kettlebell,1322.0,6.6,4.0,Intermediate,Regular,4.0
+2023,February,165.0,165.0,27.5,3.0,Functional,1472.0,7.6,5.0,Intermediate,Skipped,4.0
+2023,March,165.0,165.5,27.6,2.0,Kettlebell,1470.0,7.8,7.0,Intermediate,Irregular,4.0
+2023,April,165.0,166.0,27.7,4.0,Functional + Kettlebell,1302.0,7.6,7.0,Intermediate,Irregular,3.0
+2023,May,165.0,166.5,27.7,4.0,Kettlebell,1261.0,6.9,4.0,Intermediate,Irregular,2.0
+2023,June,165.0,167.0,27.8,4.0,Functional + Kettlebell,1317.0,7.4,4.0,Intermediate,Regular,4.0
+2023,July,165.0,167.5,27.9,4.0,Functional,1317.0,6.6,4.0,Intermediate,Irregular,2.0
+2023,August,165.0,168.0,28.0,4.0,None / Walking,1342.0,7.5,5.0,Intermediate,Irregular,4.0
+2023,September,165.0,169.0,28.2,4.0,Functional + Kettlebell,1442.0,6.9,7.0,Intermediate,Skipped,2.0
+2023,October,165.0,170.0,28.3,2.0,Functional,1420.0,7.0,7.0,Intermediate,Skipped,4.0
+2023,November,165.0,171.0,28.5,2.0,Functional + Kettlebell,1250.0,6.6,6.0,Intermediate,Regular,2.0
+2023,December,165.0,172.0,28.7,2.0,Functional,1474.0,7.2,7.0,Intermediate,Irregular,3.0
+2024,January,165.0,174.0,29.0,0.0,None / Walking,2673.0,5.0,2.0,Sedentary,Continuous (whole month),10.0
+2024,February,165.0,176.0,29.3,0.0,None / Walking,2763.0,4.7,2.0,Sedentary,Continuous (whole month),7.0
+2024,March,165.0,178.0,29.7,0.0,None / Walking,2442.0,6.9,5.0,Sedentary,Continuous (whole month),10.0
+2024,April,165.0,179.0,29.8,0.0,None / Walking,2418.0,6.2,2.0,Sedentary,Continuous (whole month),8.0
+2024,May,165.0,180.0,30.0,0.0,None / Walking,2588.0,4.5,5.0,Sedentary,Continuous (whole month),9.0
+2024,June,165.0,181.0,30.2,0.0,None / Walking,2665.0,5.1,5.0,Sedentary,Continuous (whole month),8.0
+2024,July,165.0,182.0,30.3,0.0,None / Walking,2394.0,5.1,2.0,Sedentary,Continuous (whole month),7.0
+2024,August,165.0,183.0,30.5,0.0,None / Walking,2521.0,4.6,5.0,Sedentary,Continuous (whole month),8.0
+2024,September,165.0,184.0,30.7,0.0,None / Walking,2258.0,6.4,6.0,Sedentary,Continuous (whole month),8.0
+2024,October,165.0,185.0,30.8,0.0,None / Walking,2270.0,5.7,3.0,Sedentary,Continuous (whole month),10.0
+2024,November,165.0,187.0,31.2,0.0,None / Walking,2322.0,6.4,3.0,Sedentary,Continuous (whole month),7.0
+2024,December,165.0,189.0,31.5,0.0,None / Walking,2283.0,5.3,4.0,Sedentary,Continuous (whole month),9.0
+2025,January,165.0,189.0,31.5,0.0,None / Walking,2209.0,6.3,5.0,Sedentary,Continuous (whole month),8.0
+2025,February,165.0,190.0,31.7,0.0,None / Walking,2405.0,5.3,5.0,Sedentary,Heavy/Prolonged,8.0
+2025,March,165.0,190.0,31.7,0.0,None / Walking,2074.0,5.0,3.0,Sedentary,Continuous (whole month),4.0
+2025,April,165.0,190.0,31.7,0.0,None / Walking,2218.0,6.0,4.0,Sedentary,Heavy/Prolonged,7.0
+2025,May,165.0,189.0,31.5,0.0,None / Walking,2250.0,5.7,4.0,Sedentary,Heavy/Prolonged,9.0
+2025,June,165.0,188.0,31.3,0.0,None / Walking,2309.0,6.2,3.0,Sedentary,Heavy/Prolonged,9.0
+2025,July,165.0,187.0,31.2,3.0,Kettlebell,1735.0,6.7,5.0,Beginner,Regular,6.0
+2025,August,165.0,186.0,31.0,5.0,Kettlebell,1674.0,7.0,7.0,Intermediate,Regular,5.0
+2025,September,165.0,185.0,30.8,3.0,Crossfit + Kettlebell,1741.0,6.6,7.0,Beginner,Irregular,6.0
+2025,October,165.0,186.0,31.0,3.0,Crossfit + Kettlebell,1882.0,7.6,5.0,Beginner,Regular,7.0
+2025,November,165.0,185.0,30.8,3.0,Crossfit,1789.0,7.4,6.0,Intermediate,Regular,5.0
+2025,December,165.0,184.0,30.7,4.0,Functional,1620.0,7.8,6.0,Beginner,Irregular,5.0
+2026,January,165.0,185.0,30.8,5.0,Functional + Kettlebell,1908.0,8.0,7.0,Intermediate,Regular,4.0
+2026,February,165.0,184.0,30.7,4.0,Kettlebell,1911.0,6.5,8.0,Intermediate,Regular,5.0
+2026,March,165.0,185.0,30.8,6.0,Kettlebell,1836.0,6.7,6.0,Intermediate,Regular,5.0
+2026,April,165.0,186.0,31.0,4.0,Crossfit + Kettlebell,1813.0,6.8,9.0,Advanced,Regular,5.0
+2026,May,165.0,185.0,30.8,4.0,Kettlebell,1712.0,7.5,9.0,Advanced,Regular,5.0
